@@ -9,8 +9,10 @@ class CreateCategoryUseCase {
   // eslint-disable-next-line no-useless-constructor
   constructor(private categoriesRepository: ICategoriesRepository) {}
 
-  execute({ description, name }: IRequest): void {
-    const categoriesAlreadyExists = this.categoriesRepository.findByName(name);
+  async execute({ description, name }: IRequest): Promise<void> {
+    const categoriesAlreadyExists = await this.categoriesRepository.findByName(
+      name
+    );
 
     if (categoriesAlreadyExists) {
       throw new Error("Category already exists");
