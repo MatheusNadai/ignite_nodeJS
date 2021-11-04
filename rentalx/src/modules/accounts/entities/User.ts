@@ -16,9 +16,6 @@ class User {
   password: string;
 
   @Column()
-  username: string;
-
-  @Column()
   driver_license: string;
 
   @Column()

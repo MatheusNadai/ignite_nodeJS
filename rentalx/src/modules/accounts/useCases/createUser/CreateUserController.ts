@@ -1,5 +1,5 @@
 import { container } from "tsyringe";
-import { Response, Request, response } from "express";
+import { Response, Request } from "express";
 import { CreateUserUseCase } from "./CreateUserUseCase";
 
 class CreateUserController {
@@ -10,7 +10,6 @@ class CreateUserController {
 
     await createUserUseCase.execute({
       name,
-      username,
       email,
       driver_license,
       password,
