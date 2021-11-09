@@ -30,6 +30,10 @@ export async function ensureAuthenticated(
       throw new AppError("Another exist", 401);
     }
 
+    request.user = {
+      id: user.id,
+    };
+
     next();
   } catch {
     throw new AppError("Invalid Code", 401);
