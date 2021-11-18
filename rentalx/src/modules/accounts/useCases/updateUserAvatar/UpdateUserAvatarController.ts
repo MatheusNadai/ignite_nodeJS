@@ -1,6 +1,7 @@
 import { container } from "tsyringe";
 import { Response, Request } from "express";
 import { UpdateUserAvatarUserUseCase } from "./UpdateUserAvatarUseCase";
+import "reflect-metadata";
 
 class UpdateUserAvatarController {
   async handle(req: Request, res: Response): Promise<Response> {
