@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
+import "reflect-metadata";
 import { container } from "tsyringe";
 
 import { AuthenticateUserUseCase } from "./AuthenticateUserUseCase";
-import "reflect-metadata";
 
 class AuthenticateUserController {
   async handle(request: Request, response: Response): Promise<Response> {
